@@ -1,3 +1,7 @@
+## React Chat App
+
+This app was built with react js, node js and socket.io.
+
 ## Installation and setup
 
 Clone or download the repository.
