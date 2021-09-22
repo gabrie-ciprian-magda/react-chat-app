@@ -30,18 +30,20 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={joinRoom}>
         {!showChatWindow ?
-          (<div className="joinChatContainer">
-            <h3>Join a chat</h3>
-            <input type="text" placeholder="Username" onChange={setUserNameInput} />
-            <input type="text" placeholder="Chatroom Name" onChange={setChatRoomInput} />
-            <button type="submit">Join chatroom</button>
-          </div>)
+          (
+          <form onSubmit={joinRoom}>
+            <div className="joinChatContainer">
+              <h3>Join a chat</h3>
+              <input type="text" placeholder="Username" onChange={setUserNameInput} />
+              <input type="text" placeholder="Chatroom Name" onChange={setChatRoomInput} />
+              <button type="submit">Join chatroom</button>
+            </div>
+          </form>
+          )
         :
           (<Chat socket={socket} user={userName} room={chatRoom} />)
         }
-      </form>
     </div>
   );
 }
